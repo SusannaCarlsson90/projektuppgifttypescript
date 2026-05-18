@@ -4,5 +4,6 @@ import { Home } from './pages/home/home';
 
 export const routes: Routes = [
   { path: "", component: Home},
-  { path: "", component: Myschedule}
+  { path: "myschedule", component: Myschedule},
+  { path: "**", redirectTo: "", pathMatch: "full"}
 ];
