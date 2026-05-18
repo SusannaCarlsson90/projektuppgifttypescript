@@ -1,6 +1,22 @@
-import { Injectable } from '@angular/core';
+//Importerar verktyg
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+//Importerar mitt interface: 
+import { Course } from '../models/courses';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class Course {}
+export class CourseService {
+  // inject(HttpClient) skapar en koppling till Angulars HTTP-verktyg och sparar det i "http"
+  private http = inject(HttpClient); 
+
+  //Sökvägen till min lokala fil: 
+  private jsonUrl = '/miun_courses.json'; 
+
+  //En funktion som startar en hämtning av min JSON-fil 
+  getCourses(): Observable<Course[]> {
+    return this.http.get<Course[]>(this.jsonUrl);
+  }
+}
