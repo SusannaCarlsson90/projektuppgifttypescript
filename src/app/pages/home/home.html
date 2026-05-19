@@ -1,1 +1,36 @@
-<p>home works!</p>
+<div class="container">
+  <h1>Ramschema</h1>
+  @if (error()) {
+    <p style="color: red;">{{ error() }}</p>
+  }
+
+  <input type="text" (input)="handleSearch($event)" placeholder="Sök kurs här">
+  <div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th (click)="sortData('courseCode')" style="cursor:pointer;">Kurskod</th>
+        <th (click)="sortData('courseName')" style="cursor:pointer;">Kursnamn</th>
+        <th (click)="sortData('points')" style="cursor:pointer;">Poäng</th>
+        <th (click)="sortData('progression')" style="cursor:pointer;">Progression</th>
+        <th (click)="sortData('subject')" style="cursor:pointer;">Ämne</th>
+        <th (click)="sortData('syllabus')" style="cursor:pointer;">Kursplan</th>
+        
+      </tr>
+    </thead>
+
+  
+  <tbody>
+    <tr *ngFor="let course of filteredCourses()">
+      <td data-label="Kod">{{course.courseCode.toUpperCase()}}</td>
+      <td data-label="Namn">{{course.courseName}}</td>
+      <td data-label="Poäng">{{course.points}}</td>
+      <td data-label="Nivå">{{course.progression}}</td>
+      <td data-label="Ämne">{{course.subject}}</td>
+      <td data-label="Länk"><a [href]="course.syllabus" target="_blank">Webblänk</a></td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+</div>
