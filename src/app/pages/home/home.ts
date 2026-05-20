@@ -49,6 +49,12 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
     this.searchTerm.set(input.value.toLowerCase()); //Sparar det som skrivs och gör om till små bokstäver
   }
 
+  //Funktion som lyssnar på när användaren väljer ett ämne i dropdown-menyn och uppdaterar min signal 
+  handleSubjectChange(event: Event) {
+    const select = event.target as HTMLSelectElement;
+    this.selectedSubject.set(select.value);
+  }
+
 
 // En funktion som körs när användaren klickar på en rubrik för att sortera listan
 sortData(key: keyof Course) {
