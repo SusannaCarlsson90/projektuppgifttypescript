@@ -5,6 +5,7 @@
   }
 
   <input type="text" (input)="handleSearch($event)" placeholder="Sök kurs här">
+  <p class="searchCount">Hittade {{filteredCourses().length}} kurser</p>
   <div class="table-container">
   <table>
     <thead>
