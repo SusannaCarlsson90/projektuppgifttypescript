@@ -35,6 +35,13 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
     }
     return list; 
   });
+
+  uniqueSubjects = computed(() => {
+    //Plockar ut alla ämnen från alla kurser
+    const subjects = this.courses().map(course => course.subject);
+  
+    return [...new Set(subjects)].sort();  //Skapar en "Set" för att bara behålla unika värden (tar bort dubbletter), och gör om tillbaka till en array och sortera 
+  });
   
   courseService = inject(CourseService); //Kopplar på kurs-service
   ngOnInit() {
