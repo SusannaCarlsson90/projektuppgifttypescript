@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ScheduleService } from '../../services/schedule.service';
 
 @Component({
   selector: 'app-myschedule',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './myschedule.html',
   styleUrl: './myschedule.css',
 })
-export class Myschedule {}
+export class Myschedule {
+  scheduledCourses = inject(ScheduleService).courses;
+}

@@ -1,1 +1,8 @@
-<p>myschedule works!</p>
+<h2>Mitt ramschema</h2>>
+<ul>
+  @for (course of scheduledCourses(); track course.courseCode) {
+    <li>{{ course.courseName }}</li>
+  } @empty {
+    <p>Inga kurser valda än.</p>
+  }
+</ul>

@@ -36,6 +36,7 @@
       <td data-label="Nivå">{{course.progression}}</td>
       <td data-label="Ämne">{{course.subject}}</td>
       <td data-label="Länk"><a [href]="course.syllabus" target="_blank">Webblänk</a></td>
+      <td data-label="Val"><button (click)="addToSchedule(course)">Lägg till</button></td>
     </tr>
 
   </tbody>
