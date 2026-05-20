@@ -4,7 +4,7 @@ import { Course } from '../models/courses';
 @Injectable({
   providedIn: 'root',
 })
-export class Schedule {
+export class ScheduleService {
   private scheduledCourses = signal<Course[]>([]); //Sparar listan med valda kurser när användaren ska skapa sitt eget schema
   courses = this.scheduledCourses.asReadonly();
 

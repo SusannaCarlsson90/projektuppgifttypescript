@@ -1,7 +1,9 @@
 import { Component, inject, signal, OnInit, computed } from '@angular/core';
 import { Course } from '../../models/courses'; // Mitt interface
-import { CourseService } from '../../services/course'; // Min service course.ts
+import { CourseService } from '../../services/course.service'; // Min service course.ts
 import { CommonModule } from '@angular/common';
+import { ScheduleService } from '../../services/schedule.service';
+
 
 @Component({
   selector: 'app-home',
@@ -44,6 +46,11 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
   });
   
   courseService = inject(CourseService); //Kopplar på kurs-service
+  private scheduleService = inject(ScheduleService);
+
+  addToSchedule(course: Course) { //Anropar ScheduleService för att spara kursen i det centrala schemat (Schedule service)
+    this.scheduleService.addCourse(course);
+  }
   ngOnInit() {
   this.loadCourses();
   }
