@@ -8,10 +8,10 @@
   <p class="searchCount">Hittade {{filteredCourses().length}} kurser</p>
 
   <select (change)="handleSubjectChange($event)">
-    <option value>Alla ämnen</option>
-    <option value="Datateknik">Datateknik</option>
-  <option value="Webbutveckling">Webbutveckling</option>
-  <option value="Datavetenskap">Datavetenskap</option>
+ <option value="">Alla ämnen</option>
+ @for (subject of uniqueSubjects(); track subject) {
+  <option [value]="subject">{{ subject }}</option>
+ }
   </select>
   <div class="table-container">
   <table>
