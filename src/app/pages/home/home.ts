@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
  courses = signal<Course[]>([]);
   error = signal<string | null>(null);
   searchTerm = signal<string>('')// En behållare som sparar texten användaren skriver i sökrutan
+  selectedSubject = signal<string>('');
 
   filteredCourses = computed(() => { //Computed skapar en ny, smart lista som håller koll på de andra signalerna. 
     const term = this.searchTerm().toLowerCase(); // Hämtar sökordet och gör om till små bokstäver oavsett hur användaren skriver
