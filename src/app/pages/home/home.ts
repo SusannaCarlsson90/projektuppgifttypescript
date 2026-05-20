@@ -12,18 +12,28 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent implements OnInit { //Skapar tre signalar: courses, error och serchTerm. 
  courses = signal<Course[]>([]);
   error = signal<string | null>(null);
-  searchTerm = signal<string>('')// En behållare som sparar texten användaren skriver i sökrutan
+  searchTerm = signal<string>('')// En "behållare" som sparar texten användaren skriver i sökrutan
   selectedSubject = signal<string>('');
 
   filteredCourses = computed(() => { //Computed skapar en ny, smart lista som håller koll på de andra signalerna. 
     const term = this.searchTerm().toLowerCase(); // Hämtar sökordet och gör om till små bokstäver oavsett hur användaren skriver
-    const list = this.courses(); // Hämtar alla kurser 
+    const subject = this.selectedSubject(); //Hämtar värdet från signalen
+    let list = this.courses(); // Hämtar alla kurser 
 
-    // Returnerar bara de kurser som matchar sökordet i kod eller namn
-    return list.filter(course => //Filtrerar listan och behåller bara det som matchar vad användaren skriver
-      course.courseCode.toLowerCase().includes(term) || 
-      course.courseName.toLowerCase().includes(term)
-    );
+    //Filtrera på sökord (kod eller namn)
+    if (term) {
+      list = list.filter(course => 
+        course.courseCode.toLowerCase().includes(term) ||
+        course.courseName.toLowerCase().includes(term)
+      );
+    }
+
+    //Filtrera på ämne
+
+    if (subject) {
+      list = list.filter(course => course.subject === subject);
+    }
+    return list; 
   });
   
   courseService = inject(CourseService); //Kopplar på kurs-service
