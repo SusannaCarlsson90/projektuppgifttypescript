@@ -12,5 +12,10 @@ export class ScheduleService {
   addCourse(course: Course) {
     this.scheduledCourses.update(list => [...list, course]);
   }
+
+//Funktion som tar bort en kurs
+removeCourse(courseCode: string) {
+  this.scheduledCourses.update(list => list.filter(c => c.courseCode !== courseCode));
+}
 }
 

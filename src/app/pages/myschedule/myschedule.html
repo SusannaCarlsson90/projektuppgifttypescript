@@ -1,8 +1,40 @@
-<h2>Mitt ramschema</h2>>
-<ul>
-  @for (course of scheduledCourses(); track course.courseCode) {
-    <li>{{ course.courseName }}</li>
-  } @empty {
-    <p>Inga kurser valda än.</p>
-  }
-</ul>
+<div class="container">
+  <h1>Mitt ramschema</h1>
+  
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Kurskod</th>
+          <th>Kursnamn</th>
+          <th>Poäng</th>
+          <th>Progression</th>
+          <th>Ämne</th>
+          <th>Kursplan</th>
+          <th>Ta bort</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (course of scheduledCourses(); track course.courseCode) {
+          <tr>
+            <td data-label="Kurskod">{{course.courseCode.toUpperCase()}}</td>
+            <td data-label="Kursnamn">{{course.courseName}}</td>
+            <td data-label="Poäng">{{course.points}}</td>
+            <td data-label="Progression">{{course.progression}}</td>
+            <td data-label="Ämne">{{course.subject}}</td>
+            <td data-label="Kursplan">
+              <a [href]="course.syllabus" target="_blank">Webblänk</a>
+            </td>
+            <td data-label="Ta bort">
+              <button (click)="removeCourse(course.courseCode)">Ta bort</button>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="7">Inga kurser valda än.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

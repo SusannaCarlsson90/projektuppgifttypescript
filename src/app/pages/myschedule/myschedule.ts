@@ -9,4 +9,10 @@ import { ScheduleService } from '../../services/schedule.service';
 })
 export class Myschedule {
   scheduledCourses = inject(ScheduleService).courses;
+
+  private scheduleService = inject(ScheduleService);
+
+removeCourse(courseCode: string) {
+  this.scheduleService.removeCourse(courseCode);
+}
 }
