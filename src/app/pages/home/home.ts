@@ -49,7 +49,10 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
   private scheduleService = inject(ScheduleService);
 
   addToSchedule(course: Course) { //Anropar ScheduleService för att spara kursen i det centrala schemat (Schedule service)
-    this.scheduleService.addCourse(course);
+    const success = this.scheduleService.addCourse(course);
+    if(!success) {
+      alert("Kursen finns redan i ditt schema");
+    }
   }
   ngOnInit() {
   this.loadCourses();

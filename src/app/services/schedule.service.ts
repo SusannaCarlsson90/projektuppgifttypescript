@@ -10,7 +10,15 @@ export class ScheduleService {
 
   //Funktion som lägger till en kurs i listan 
   addCourse(course: Course) {
+    //Finns kursen redan tillagd i listan?
+    const exists = this.scheduledCourses().some(c=> c.courseCode === course.courseCode);
+    if(!exists) { // om den inte finns lägg till den
     this.scheduledCourses.update(list => [...list, course]);
+    return true; //Lyckades
+  } else {
+    //popup denna kurs finns redan tillagd
+    return false; 
+} 
   }
 
 //Funktion som tar bort en kurs
