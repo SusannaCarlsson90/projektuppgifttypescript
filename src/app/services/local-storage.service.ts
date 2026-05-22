@@ -1,5 +1,4 @@
-typescript
-CopyEdit // Källa: https://dev.to/codewithrajat/mastering-angular-local-storage-simplified-standard-and-interactive-implementation-for-frontend-3lhe finns även i rapporten
+// Källa: https://dev.to/codewithrajat/mastering-angular-local-storage-simplified-standard-and-interactive-implementation-for-frontend-3lhe finns även i rapporten
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -19,7 +18,8 @@ export class LocalStorageService {
   }
 
   // Get data from local storage
-  getItem(key: string): any {
+ // Lägger till <T> för att kunna skicka med en typ
+ getItem<T>(key: string): T | null {
     try {
       const item = localStorage.getItem(key);
       return item ? JSON.parse(item) : null;
