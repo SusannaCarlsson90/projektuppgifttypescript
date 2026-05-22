@@ -1,5 +1,6 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { Course } from '../models/courses';
+import { LocalStorageService } from './local-storage.service'; // Importerar min service 
 
 @Injectable({
   providedIn: 'root',
