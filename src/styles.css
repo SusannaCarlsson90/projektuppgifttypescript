@@ -13,26 +13,40 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-
-input {
-  width: 90%;         
-  padding: 12px 15px;  
-  margin: 20px 0;      
-  border: 1px solid #ccc;
-  border-radius: 4px;   
-  font-size: 16px;      
+/* Sökfältet och select-menyn */
+input, select {
+  width: 100%;          /* Fyller hela bredden av containern */
+  max-width: 1200px;     /* Samma maxbredd som tabellen */
+  display: block;       
+  margin: 20px auto;    /* Centrerar dem i mitten */
+  padding: 20px;  
   box-sizing: border-box; 
 }
 
+
 table {
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: left;
   border-collapse: collapse;
+  padding: 20px;
 } 
 
+.table-container {
+  width: 100%;
+  max-width: 1200px;     
+  margin: 0 auto;       
+  overflow-x: auto;    
 
+}
+
+.searchCount {
+  width: 100%;
+  max-width: 1200px;     
+  margin: 0 auto;       
+  overflow-x: auto;    
+}
 
 th, td {
   padding: 12px;

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ScheduleService } from '../../services/schedule.service';
 
 
+
 @Component({
   selector: 'app-home',
   imports: [CommonModule],
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
   error = signal<string | null>(null);
   searchTerm = signal<string>('')// En "behållare" som sparar texten användaren skriver i sökrutan
   selectedSubject = signal<string>('');
+  displayCount = signal(50); 
 
   filteredCourses = computed(() => { //Computed skapar en ny lista som håller koll på de andra signalerna. 
     const term = this.searchTerm().toLowerCase(); // Hämtar sökordet och gör om till små bokstäver oavsett hur användaren skriver
@@ -35,7 +37,7 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
     if (subject) {
       list = list.filter(course => course.subject === subject);
     }
-    return list; 
+    return list.slice(0, this.displayCount());
   });
 
   uniqueSubjects = computed(() => {
@@ -81,7 +83,10 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
     const select = event.target as HTMLSelectElement;
     this.selectedSubject.set(select.value);
   }
-
+//Metod för att ladda 50 till: 
+loadMore() {
+  this.displayCount.update(current => current + 50);
+}
 
 // En funktion som körs när användaren klickar på en rubrik för att sortera listan
 sortData(key: keyof Course) {

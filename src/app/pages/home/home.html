@@ -9,6 +9,8 @@
 
   <select (change)="handleSubjectChange($event)">
  <option value="">Alla ämnen</option>
+
+
  @for (subject of uniqueSubjects(); track subject) {
   <option [value]="subject">{{ subject }}</option>
  }
@@ -44,4 +46,9 @@
   </tbody>
 </table>
 </div>
+@if (filteredCourses().length < courses().length) {
+  <button (click)="loadMore()" style="display: block; margin: 20px auto; padding: 10px 20px;">
+    Ladda fler kurser
+  </button>
+}
 </div>
