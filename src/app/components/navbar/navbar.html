@@ -1,0 +1,16 @@
+<header>
+  <nav>
+    <div class="container nav-container">
+      <button class="menu-toggle" (click)="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul [class.open]="isMenuOpen">
+        <li><a routerLink="" (click)="closeMenu()">Hem</a></li>
+        <li><a routerLink="/myschedule" (click)="closeMenu()">Mitt schema</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

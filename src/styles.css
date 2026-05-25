@@ -13,134 +13,36 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Centrerar innehåll i nav */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Lägger länkarna på en rad */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px; /* Mellanrum mellan länkarna */
-}
-
-/* Stylar länkarna*/
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: color 0.2s ease;
-}
-
-/* Effekt när man hovrar över länkarna */
-nav a:hover {
-  color: #00adb5;
-}
-
-main {
-  padding: 40px 0;
-}
-
-
-
-
-/* HAMBURGERMENY: */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-/* Dölj hamburgerknappen på stora skärmar*/
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-/* De tre strecken i hamburgerknappen */
-.menu-toggle .bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  transition: all 0.3s ease;
-}
-
-/*FÖR MOBIL:*/
-@media (max-width: 768px) {
-  .nav-container {
-    justify-content: flex-end; /* Flyttar knappen längst till höger */
-  }
-
-  .menu-toggle {
-    display: flex; /* Visar knappen på mobilen */
-  }
-
-
-  nav ul {
-    display: none; 
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    background-color: #1a1a1a;
-    padding: 15px 0;
-    z-index: 100;
-  }
-
-  nav ul.open {
-    display: flex;
-  }
-
-  nav ul li {
-    text-align: center;
-    padding: 12px 0;
-  }
-}
-
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
 
 input {
-  width: 100%;          /* Gör rutan lika bred som tabellen */
+  width: 90%;         
   padding: 12px 15px;  
   margin: 20px 0;      
   border: 1px solid #ccc;
   border-radius: 4px;   
-  font-size: 16px;      /* Gör texten lättläst */
+  font-size: 16px;      
   box-sizing: border-box; 
 }
+
 table {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
   border-collapse: collapse;
-}
+} 
 
-h1 {
-  text-align: center;
-}
+
 
 th, td {
   padding: 12px;
   border-bottom: 1px solid #ddd; /* En tunn linje mellan varje rad */
 
 }
+
+  h1 {
+    text-align: center;
+  }
 
 th {
   background-color: #f4f4f4; 
@@ -155,17 +57,16 @@ tr:hover {
   background-color: #f0f0f0; 
 }
 
-/* Gör tabellen scrollbar i sidled på mindre skärmar */
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-  margin-bottom: 20px;
+
+
+main {
+  padding: 40px 0;
 }
 
+/*FÖR MOBIL:*/
+@media (max-width: 768px) {
 
 
-
-@media screen and (max-width: 600px) {
   /* Dölj rubrikraden på mobil */
   thead {
     display: none;
