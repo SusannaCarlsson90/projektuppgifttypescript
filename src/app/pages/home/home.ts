@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
   error = signal<string | null>(null);
   searchTerm = signal<string>('')// En "behållare" som sparar texten användaren skriver i sökrutan
   selectedSubject = signal<string>('');
-  displayCount = signal(50); 
+  displayCount = signal(50); //Gräns för hur många kurser som visas samtidigt pga. allt gick så långsamt 
 
   filteredCourses = computed(() => { //Computed skapar en ny lista som håller koll på de andra signalerna. 
     const term = this.searchTerm().toLowerCase(); // Hämtar sökordet och gör om till små bokstäver oavsett hur användaren skriver
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
     if (subject) {
       list = list.filter(course => course.subject === subject);
     }
-    return list.slice(0, this.displayCount());
+    return list.slice(0, this.displayCount()); 
   });
 
   uniqueSubjects = computed(() => {
