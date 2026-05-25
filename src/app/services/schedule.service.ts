@@ -1,4 +1,4 @@
-import { Injectable, signal, effect, inject } from '@angular/core';
+import { Injectable, signal, effect, inject, computed} from '@angular/core';
 import { Course } from '../models/courses';
 import { LocalStorageService } from './local-storage.service'; 
 import { Myschedule } from '../pages/myschedule/myschedule';
@@ -11,6 +11,11 @@ export class ScheduleService {
 
   //Ladda in från localStorage direkt vid start
   private scheduledCourses = signal<Course[]>(this.storage.getItem<Course[]>('mySchedule') || []);
+
+  //Räknar automatiskt ut summan av alla högskolepoäng för valda kurser
+  totalCredits = computed(() => { 
+    return this.scheduledCourses().reduce((sum, course) => sum + course.points, 0);
+  });
 
   courses = this.scheduledCourses.asReadonly();
 

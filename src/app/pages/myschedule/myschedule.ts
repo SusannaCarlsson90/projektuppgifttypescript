@@ -8,11 +8,12 @@ import { ScheduleService } from '../../services/schedule.service';
   styleUrl: './myschedule.css',
 })
 export class Myschedule {
-  scheduledCourses = inject(ScheduleService).courses;
+  // Injicerar service och döper till scheduleService
+  protected scheduleService = inject(ScheduleService);
 
-  private scheduleService = inject(ScheduleService);
+  scheduledCourses = this.scheduleService.courses;
 
-removeCourse(courseCode: string) {
-  this.scheduleService.removeCourse(courseCode);
-}
+  removeCourse(courseCode: string) {
+    this.scheduleService.removeCourse(courseCode);
+  }
 }

@@ -18,7 +18,7 @@ export class LocalStorageService {
   }
 
   // Get data from local storage
- // Lägger till <T> för att kunna skicka med en typ
+ 
  getItem<T>(key: string): T | null {
     try {
       const item = localStorage.getItem(key);

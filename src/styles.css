@@ -58,7 +58,7 @@ main {
   position: relative;
 }
 
-/* Dölj hamburgarknappen på stora skärmar*/
+/* Dölj hamburgerknappen på stora skärmar*/
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -69,7 +69,7 @@ main {
   padding: 10px;
 }
 
-/* De tre strecken i hamburgarknappen */
+/* De tre strecken i hamburgerknappen */
 .menu-toggle .bar {
   width: 25px;
   height: 3px;

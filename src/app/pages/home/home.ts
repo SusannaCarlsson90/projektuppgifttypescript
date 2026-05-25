@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit { //Skapar tre signalar: courses, e
   searchTerm = signal<string>('')// En "behållare" som sparar texten användaren skriver i sökrutan
   selectedSubject = signal<string>('');
 
-  filteredCourses = computed(() => { //Computed skapar en ny, smart lista som håller koll på de andra signalerna. 
+  filteredCourses = computed(() => { //Computed skapar en ny lista som håller koll på de andra signalerna. 
     const term = this.searchTerm().toLowerCase(); // Hämtar sökordet och gör om till små bokstäver oavsett hur användaren skriver
     const subject = this.selectedSubject(); //Hämtar värdet från signalen
     let list = this.courses(); // Hämtar alla kurser 

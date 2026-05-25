@@ -1,59 +1,21 @@
 # Projektuppgift
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+Detta är det avslutande arbetet i kursen TypeScript där uppgiften varit att bygga en applikation där man kan söka på kurser samt spara kurser i sitt eget schema.
 
-## Development server
+## Beskrivning
 
-To start a local development server, run:
+Applikationen är byggd med Angular och låter användaren se en lista över tillgängliga kurser. Användaren kan lägga till kurser till sitt eget schema och även radera dessa.
 
-```bash
-ng serve
-```
+## Grundkrav E-nivå
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Jag har implementerat kraven som gäller för E-nivå:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Applikationen skall skapas med Angular och TypeScript.
+Lösningen skall ha minst två undersidor, en för att söka och visa information om kurser - och en som visar skapat ramschema.
+Komponenter och routing skalla användas.
+Minst två stycken services skall skapas, en för kursdata och en för hantering av ramschema.
+Det ska gå att skapa ett eget ramschema med ett tydligt gränssnitt. Det får inte vara möjligt att skapa dubletter av samma kurs i ramschemat.
+Listan med valda kurser skall uppdateras utan sidomladdning, och skapat ramschema skall lagras med hjälp av localStorage, och läsas in på nytt vid inladdning av webbsidan.
+Webbplatsen skall vara snygg, prydlig och ha ett välgenomarbetat helhetsintryckt - och fungera väl på stora som små skärmar med bra responsiv design.
+Källkodens skall versionshanteras med Git.
+Den färdiga lösning skall publiceras till publikt tillgänglig webbhost.
