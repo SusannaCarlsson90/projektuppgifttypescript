@@ -2,6 +2,10 @@
 
 Detta är det avslutande arbetet i kursen TypeScript där uppgiften varit att bygga en applikation där man kan söka på kurser samt spara kurser i sitt eget schema.
 
+## Länk till hemsida
+
+https://projektuppgifttypescript.onrender.com/
+
 ## Beskrivning
 
 Applikationen är byggd med Angular och låter användaren se en lista över tillgängliga kurser. Användaren kan lägga till kurser till sitt eget schema och även radera dessa.
