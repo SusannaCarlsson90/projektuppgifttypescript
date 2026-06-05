@@ -12,7 +12,7 @@ Applikationen är byggd med Angular och låter användaren se en lista över til
 
 ## Grundkrav E-nivå
 
-Jag har implementerat kraven som gäller för E-nivå:
+Jag har implementerat kraven som gäller för E-nivå och har inte gjort något utöver grundkraven:
 
 - Applikationen skall skapas med Angular och TypeScript.
 - Lösningen skall ha minst två undersidor, en för att söka och visa information om kurser - och en som visar skapat ramschema.
