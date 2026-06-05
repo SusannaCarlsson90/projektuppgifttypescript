@@ -6,18 +6,13 @@
   padding: 0 20px;
 }
 
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
 /* Lägger länkarna på en rad */
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 20px; /* Mellanrum mellan länkarna */
+  gap: 20px; 
 }
 
 /* Stylar länkarna*/
@@ -29,7 +24,7 @@ nav a {
   transition: color 0.2s ease;
 }
 
-/* Effekt när man hovrar över länkarna */
+
 nav a:hover {
   color: #00adb5;
 }
